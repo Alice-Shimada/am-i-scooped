@@ -1,0 +1,100 @@
+{
+  "title": "历史回放示例｜2016-08-01 前的可学习 Batch/Layer 统计混合归一化",
+  "assessed_at": "2026-10-08 01:37:05 Asia/Shanghai",
+  "scope": "检索截至 2016-08-01 的公开文献。判断对象是一个整体归一化层：同时以 mini-batch 统计和单样本 layer 统计为候选，并在每层端到端学习均值与方差各自的组合权重以适应 batch size。",
+  "basis": "novelty",
+  "user_milestone": null,
+  "status": "complete",
+  "verdict": "safe",
+  "summary": "截止日以前 Batch Normalization 与 Layer Normalization 已分别公开，Layer Normalization 还明确比较了二者和 batch-size 差异；但检索未发现任何截止日前来源在同一层中端到端学习两套均值、方差统计的组合权重，因此完整混合机制仍属独特。",
+  "recommendation": "继续把可学习的统计混合层作为核心贡献，同时把 BN 和 LN 明确列为已知候选；不要把 mini-batch 统计、单样本 layer 统计或 batch-size 问题本身宣称为新。",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "在每个归一化层同时计算 mini-batch 与单样本 layer 的均值、方差，并端到端学习两类均值和两类方差的组合权重，使归一化行为适应不同 batch size。",
+      "central": true,
+      "verdict": "safe",
+      "reason": "BN v1 只使用 mini-batch 统计，LN v1 只使用单个样本的层内统计；LN 虽将二者放在同一分析框架并比较 batch size，却把它们作为不同方案，没有在同一层同时计算并学习统计混合权重。搜索到的统一或组合归一化候选最早公开时间均晚于 2016-08-01，不能回溯覆盖本主张。",
+      "source_ids": ["S1", "S2"]
+    },
+    {
+      "id": "C2",
+      "text": "用 mini-batch 的均值和方差归一化层输入。",
+      "central": false,
+      "verdict": "scooped",
+      "reason": "Batch Normalization v1 已完整公开这一候选统计及其可微训练方式。",
+      "source_ids": ["S1"]
+    },
+    {
+      "id": "C3",
+      "text": "用单个训练样本内一层全部隐藏单元的均值和方差归一化，并消除对 batch size 的依赖。",
+      "central": false,
+      "verdict": "scooped",
+      "reason": "Layer Normalization v1 已完整公开这一候选统计，并明确指出它可用于 batch size 1。",
+      "source_ids": ["S2"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+      "url": "https://arxiv.org/html/1502.03167v1",
+      "date": "2015-02-11",
+      "version": "arXiv:1502.03167v1",
+      "evidence_level": "selected_full_text",
+      "locator": "§3 Algorithm 1 与 §3.1，mini-batch mean/variance 及训练、推断规则",
+      "finding": "BN v1 对每个激活维度使用当前 mini-batch 的均值与方差归一化，并学习归一化后的 scale 和 shift。",
+      "difference": "它不计算单样本 layer 统计，也不学习 BN/LN 两套均值和方差之间的混合权重。",
+      "claim_ids": ["C1", "C2"],
+      "excerpt": "each mini-batch produces estimates of the mean and variance of each activation"
+    },
+    {
+      "id": "S2",
+      "title": "Layer Normalization",
+      "url": "https://arxiv.org/html/1607.06450v1",
+      "date": "2016-07-21",
+      "version": "arXiv:1607.06450v1",
+      "evidence_level": "selected_full_text",
+      "locator": "摘要；§3 式(3)；§5.1 式(5)与表1；§6.6 Figure 6 说明",
+      "finding": "LN v1 在单个训练样本的一层全部隐藏单元上计算均值和方差，明确指出不限制 mini-batch 大小，并直接比较 BN 与 LN 在 batch size 128 和 4 下的表现。",
+      "difference": "论文选择 LN 统计作为 BN 的替代方案；没有在同一归一化层同时使用两者，更没有学习均值和方差的组合权重。",
+      "claim_ids": ["C1", "C3"],
+      "excerpt": "different training cases have different normalization terms"
+    }
+  ],
+  "next_steps": [
+    "把均值权重和方差权重的参数化、约束与反向传播写成核心算法，突出它们不是 BN/LN 后处理的 scale 和 shift。",
+    "用多个 batch size 展示所学权重随层和训练条件的变化，并与单独 BN、LN 做消融。",
+    "在相关工作中将 BN 和 LN 作为已知非中心组件分别归因，主张限定为端到端统计混合机制。"
+  ],
+  "coverage": {
+    "queries": [
+      {
+        "query": "before:2016-08-02 neural network learn weights combine batch normalization layer normalization mean variance",
+        "purpose": "直接寻找截止日前可学习 BN/LN 统计混合。",
+        "result": "没有找到截止日前匹配方法；返回的可学习自适应混合候选均晚于截止日。"
+      },
+      {
+        "query": "before:2016-08-02 \"batch normalization\" \"layer normalization\" mixture",
+        "purpose": "用明确方法名称寻找混合或组合方案。",
+        "result": "截止日前只确认 BN 与 LN 两种独立方案，没有端到端混合权重。"
+      },
+      {
+        "query": "before:2016-08-02 adaptive normalization batch size learnable statistics neural network",
+        "purpose": "以适应 batch size 和可学习统计的功能描述寻找不同命名的前身。",
+        "result": "找到截止日前处理 batch-size 问题的替代归一化方法，但没有 BN/LN 统计混合。"
+      },
+      {
+        "query": "\"batch and layer normalization\" \"learn\" weights mean variance",
+        "purpose": "对‘学习两套统计权重’这一决定性差异做反向检索。",
+        "result": "没有发现 2016-08-01 前公开的匹配来源。"
+      },
+      {
+        "query": "https://arxiv.org/abs/1502.03167v1 ; https://arxiv.org/abs/1607.06450v1",
+        "purpose": "核对两项候选统计的最早指定版本、日期与技术定义。",
+        "result": "确认 BN v1 为 2015-02-11，LN v1 为 2016-07-21，二者均在截止日前公开。"
+      }
+    ],
+    "gaps": []
+  }
+}

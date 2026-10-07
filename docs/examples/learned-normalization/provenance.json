@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "example_id": "B11-learned-normalizer-mixture-2016",
+  "example_kind": "historical_calibration_replay",
+  "run_date": "2026-10-08",
+  "historical_cutoff": "2016-08-01",
+  "arms": {
+    "baseline_without_revised_skill_workflow": {
+      "model": "gpt-5.6-sol",
+      "reasoning": "high",
+      "verdict": "risk"
+    },
+    "revised_skill_workflow": {
+      "model": "gpt-5.6-sol",
+      "reasoning": "high",
+      "verdict": "safe"
+    }
+  },
+  "source_records": [
+    {
+      "label": "archived benchmark cases.json",
+      "sha256": "ee9de9ff34ad6008945b64ca54f464787d7263b652c6b37b7a4c64f111d5575a",
+      "use": "exact B11 Chinese prompt only; the rest of the evaluation corpus is not published here"
+    },
+    {
+      "label": "archived baseline predictions.json",
+      "sha256": "60a370965b309a205ffe6de44f6e806149abaef5ad31d38b514c002254404fda",
+      "use": "exact B11 baseline entry only"
+    },
+    {
+      "label": "archived regression B11 report.json",
+      "sha256": "50bdcf25d5cb70262d0a049f16cacf68aa802d69d880f3490d5826706c2e4841",
+      "use": "scientific report content; published title adds a historical-replay label"
+    },
+    {
+      "label": "repository scripts/render_report.py",
+      "sha256": "ab7bc10933057f0e3ed9598531097dc769abd4cdcabefae3afb0d332b992bbfa",
+      "use": "offline HTML rendering"
+    },
+    {
+      "label": "repository assets/report-template.html",
+      "sha256": "785187e39af5528fad668e6ac3e03937084253dc6a9ec4cfd2c338c67ac47dd8",
+      "use": "offline HTML template"
+    }
+  ],
+  "published_artifacts": [
+    {
+      "path": "prompt.txt",
+      "sha256": "b246d8eff2e05b4619f0d3419b381935aaec63e9abd025b8310f5962ef4e2f8c"
+    },
+    {
+      "path": "baseline.json",
+      "sha256": "dbe4ef296d4b3d2105c6923d34854a8f4fc12c852c4e572f6f48e342bd4628b9"
+    },
+    {
+      "path": "report.json",
+      "sha256": "e29bc10e6cdd7c94a8eea035c1b98ad3e50eb50596e80aa170c20faa4a7ee5cb"
+    },
+    {
+      "path": "report.html",
+      "sha256": "7930fc52798e3215269456a49cf002a24ea9942de8244480099e5677bb1bf335"
+    },
+    {
+      "path": "README.md",
+      "sha256": "4842100f8b9db7f1b3a40a365ae90de470a43e69568923e2cbcdb46a76c2d67a"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "sha256": "ac25f9a89d6f9f04904ff8f4cb70855d73c6f2707d7e8563661a0786373f4fcf"
+    }
+  ],
+  "manifest_note": "provenance.json is not self-hashed because embedding its own digest would be self-referential.",
+  "limits": [
+    "This is one calibration-case illustration after workflow revisions, not held-out performance evidence.",
+    "No new literature search, scientific run, speed benchmark, or accuracy benchmark was performed for this public package."
+  ]
+}

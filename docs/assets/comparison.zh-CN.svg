@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="568" viewBox="0 0 1200 568" role="img" aria-labelledby="title desc"><title id="title">Same prompt, different verdict</title><desc id="desc">Archived calibration case: ordinary search at risk; revised skill safe as of 2016-08-01. Illustrated summaries of saved outputs.</desc><g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, Noto Sans CJK SC, sans-serif">
+<rect width="1200" height="568" rx="20" fill="#f3f4ef"/>
+<text x="40" y="55" font-size="32" fill="#182d2b" font-weight="700" >同一道题，判断发生了什么变化？</text>
+<text x="42" y="88" font-size="16" fill="#576c65" font-weight="400" >历史回放 · 截至 2016-08-01 · 输入未提供论文 · 同模型与思考强度</text>
+<rect x="40" y="119" width="545" height="345" rx="13" fill="#ffffff" stroke="#d5ded6"/>
+<path d="M53 119h519a13 13 0 0 1 13 13v47h-545v-47a13 13 0 0 1 13-13" fill="#fff9e9"/>
+<rect x="615" y="119" width="545" height="345" rx="13" fill="#ffffff" stroke="#d5ded6"/>
+<path d="M628 119h519a13 13 0 0 1 13 13v47h-545v-47a13 13 0 0 1 13-13" fill="#ecf7ef"/>
+<text x="64" y="157" font-size="15" fill="#865a23" font-weight="650" letter-spacing="1">未使用 skill</text>
+<text x="639" y="157" font-size="15" fill="#245e42" font-weight="650" letter-spacing="1">使用修正版 skill</text>
+<text x="65" y="231" font-size="34" fill="#a06b20" font-weight="700" >已有风险</text>
+<text x="640" y="231" font-size="34" fill="#236b46" font-weight="700" >目前安全</text>
+<text x="640" y="260" font-size="15" fill="#367554" font-weight="400" >截至 2016-08-01</text>
+<text x="66" y="282" font-size="12" fill="#6b7a71" font-weight="650" letter-spacing="1">截止日前的先例</text>
+<text x="66" y="311" font-size="18" fill="#243c34" font-weight="500" >Batch Normalization + Layer Normalization</text>
+<text x="640" y="282" font-size="12" fill="#6b7a71" font-weight="650" letter-spacing="1">截止日前的先例</text>
+<text x="640" y="311" font-size="18" fill="#243c34" font-weight="500" >Batch Normalization + Layer Normalization</text>
+<text x="66" y="356" font-size="19" fill="#3c5147" font-weight="400" >已有部件被计作部分重合，</text>
+<text x="66" y="385" font-size="19" fill="#3c5147" font-weight="400" >虽然可学习混合仍有区别，</text>
+<text x="66" y="414" font-size="19" fill="#3c5147" font-weight="400" >总体仍判为风险。</text>
+<text x="640" y="356" font-size="19" fill="#3c5147" font-weight="400" >把完整的可学习混合作为核心主张。</text>
+<text x="640" y="385" font-size="19" fill="#3c5147" font-weight="400" >两篇分别存在的论文，</text>
+<text x="640" y="414" font-size="19" fill="#3c5147" font-weight="400" >没有建立这个新机制。</text>
+<text x="41" y="503" font-size="21" fill="#203d32" font-weight="600" >保留主张中的组合关系，避免把背景部件当成创新已被覆盖。</text>
+<text x="42" y="538" font-size="13" fill="#65786d" font-weight="400" >已保存输出的示意摘要 · 校准案例 · 提示词、原始输出与来源记录见案例页</text>
+</g></svg>

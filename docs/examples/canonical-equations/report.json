@@ -1,0 +1,145 @@
+{
+  "title": "公开合成试跑回放｜规范形微分方程与一圈无质量盒图",
+  "assessed_at": "2026-10-08 01:07 Asia/Shanghai",
+  "scope": "联网试跑示例；仅评估请求中公开、示意性的三项主张。检索理论高能物理公开文献，从早期微分方程方法到 2026-10-08，重点核对规范形主积分基、epsilon 展开为迭代积分，以及一圈无质量 on-shell box family。请求者没有公开稿件，本报告判断截至评估日的当前新颖性，不判断请求者的历史公开优先权；这不是对真实未公开项目的判断。",
+  "basis": "novelty",
+  "user_milestone": null,
+  "status": "complete",
+  "verdict": "scooped",
+  "summary": "联网试跑示例——几乎已被 scoop：Henn 的 2013 年 arXiv v1 已公开通过选取主积分基得到 epsilon 因子化规范形并以迭代积分求解的一般思路，2014 年讲义 v1 又以一圈无质量盒图族写出同型常数矩阵方程并逐阶积分。",
+  "recommendation": "不要把这套一般求解思路或一圈无质量盒图演示作为新方法发表；若仍写作，应明确作为教学性说明并引用既有工作，或先加入可独立成立的新算法、适用域证明、超越多对数的新处理，或特定新拓扑的完整结果。",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "选择合适的 Feynman 主积分基，使维数正规化下的微分方程化为 d f = epsilon (sum_i A_i d log W_i) f，其中 A_i 为常数矩阵，并把它作为一般求解思路。",
+      "central": true,
+      "verdict": "scooped",
+      "reason": "Henn 2013 v1 已提出通过优选主积分基得到 epsilon 因子化规范形；其一般式和二圈例子分别给出 d f = epsilon dA f 以及由常数矩阵乘 dlog 字母组成的系统。用户没有提出额外算法、证明或更广适用域来构成实质差异。",
+      "source_ids": ["S1", "S2"]
+    },
+    {
+      "id": "C2",
+      "text": "将规范形方程按 epsilon 展开，并由路径有序指数或逐阶积分得到迭代积分解。",
+      "central": true,
+      "verdict": "scooped",
+      "reason": "Henn 2013 v1 已把规范形的解写成路径有序指数并明确说明 epsilon 微扰解是迭代积分；2014 v1 又给出 Chen 迭代积分的一般解与逐阶展开。",
+      "source_ids": ["S1", "S2"]
+    },
+    {
+      "id": "C3",
+      "text": "用一圈无质量 on-shell 盒图族演示上述选基、规范形和 epsilon 逐阶积分。",
+      "central": false,
+      "verdict": "scooped",
+      "reason": "Henn 2014 v1 的教学例正是一圈无质量 2→2 盒图族：先给出基，再得到 epsilon[a/x+b/(1+x)] 的常数矩阵系统，并按 epsilon 展开逐阶积分。更早的 1992 年工作也已用微分方程处理维数正规化的一圈无质量盒积分。",
+      "source_ids": ["S2", "S3"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Multiloop integrals in dimensional regularization made simple",
+      "url": "https://arxiv.org/pdf/1304.1806v1",
+      "date": "2013-04-05",
+      "version": "arXiv:1304.1806v1（已直接核对 v1；非以现行版本内容倒推 v1）",
+      "evidence_level": "selected_full_text",
+      "locator": "PDF 一基页码第 2 页公式 (4)、(6)、(7)；PDF 一基页码第 3 页公式 (17)、(18) 及其后关于字母表与逐阶解的段落",
+      "finding": "正文提出优选主积分基后得到 epsilon 因子化微分方程，写出路径有序指数解，并说明 epsilon 展开是迭代积分；二圈无质量 2→2 例给出由 x 与 1+x 两个 dlog 字母构成的常系数系统。",
+      "difference": "论文的展示例是二圈而不是用户拟用的一圈盒图，但这不保留核心一般方法或求解步骤的新颖性。",
+      "claim_ids": ["C1", "C2"]
+    },
+    {
+      "id": "S2",
+      "title": "Lectures on differential equations for Feynman integrals",
+      "url": "https://arxiv.org/pdf/1412.2296v1",
+      "date": "2014-12-06",
+      "version": "arXiv:1412.2296v1（已直接核对 v1）",
+      "evidence_level": "selected_full_text",
+      "locator": "印刷页 10–11（PDF 一基页码 11–12）公式 (3.14)–(3.20)：一圈无质量 2→2 box family；印刷页 17（PDF 一基页码 18）公式 (5.1)–(5.4)：一般规范形与 Chen 迭代积分解",
+      "finding": "该讲义选择一圈无质量 on-shell box family 的三元基，得到 ∂x g = epsilon[a/x+b/(1+x)]g，其中 a、b 为常数矩阵；随后令 g=sum_k epsilon^k g^(k) 并逐阶积分。它还把一般多变量解写成 Chen 迭代积分。",
+      "difference": "与拟议的一圈盒图演示和一般求解流程没有实质差异；它是对既有方法的教学展开，不是一个仅有相邻术语的候选。",
+      "claim_ids": ["C1", "C2", "C3"]
+    },
+    {
+      "id": "S3",
+      "title": "Dimensionally Regulated One-Loop Integrals",
+      "url": "https://arxiv.org/pdf/hep-ph/9212308v1",
+      "date": "1992-12-24",
+      "version": "arXiv:hep-ph/9212308v1",
+      "evidence_level": "selected_full_text",
+      "locator": "标题与摘要页（PDF 一基页码 1）；印刷页 8–9（PDF 一基页码 9–10）公式 (41)–(43) 及其应用讨论",
+      "finding": "该文在 D=4-2epsilon 中建立一圈标量积分的微分关系，并明确指出无质量内部线盒积分的微分方程容易求解。",
+      "difference": "它没有给出后来 Henn 意义下的规范基与常数矩阵 dlog 形式，因此单独不足以覆盖 C1/C2；它说明一圈无质量盒图作为微分方程演示本身早已存在。",
+      "claim_ids": ["C3"]
+    }
+  ],
+  "next_steps": [
+    "停止把 C1/C2 表述为首次提出的新方法；在任何稿件中把 Henn 2013 作为直接先行工作。",
+    "若保留一圈盒图内容，把它定位为教学示例并引用 Henn 2014 与更早的一圈积分微分方程文献。",
+    "只有在加入可核查的新技术增量后再主张方法创新，例如新的规范化算法与严格适用条件、非多对数函数空间的可计算推广，或一个此前未知拓扑的完整积分结果；届时应对该精确增量重新做检索。"
+  ],
+  "coverage": {
+    "queries": [
+      {
+        "query": "site:arxiv.org Feynman integrals canonical basis differential equations epsilon dlog constant matrices Henn 2013",
+        "purpose": "定位 C1 的直接原始文献",
+        "result": "发现 Henn 2013 及后续规范形算法工作；选 Henn 原始论文为决定性来源。"
+      },
+      {
+        "query": "site:arxiv.org \"iterated integrals\" \"canonical form\" master integrals differential equations epsilon",
+        "purpose": "检验 C2 的规范形到迭代积分路线",
+        "result": "发现规范形与迭代积分的后续算法性文献，并回溯到 Henn 2013。"
+      },
+      {
+        "query": "site:arxiv.org massless one-loop box canonical differential equations epsilon form dlog",
+        "purpose": "寻找 C3 的相同演示算例",
+        "result": "一般检索结果噪声较多，随后通过 Henn 讲义正文定位到一圈盒图族。"
+      },
+      {
+        "query": "site:arxiv.org Kotikov differential equations method Feynman integrals one-loop box dimensional regularization",
+        "purpose": "回溯微分方程法的早期前身",
+        "result": "找到 Kotikov 的方法综述与早期微分方程工作线索。"
+      },
+      {
+        "query": "arXiv 1304.1806 Multiloop integrals in dimensional regularization made simple Henn canonical differential equations",
+        "purpose": "核对最强候选的标题、摘要与公开时间",
+        "result": "定位 arXiv:1304.1806，并进一步直接读取 v1 PDF。"
+      },
+      {
+        "query": "\"Multiloop integrals in dimensional regularization made simple\" canonical form d log",
+        "purpose": "用不同措辞检验 C1",
+        "result": "再次定位 Henn 2013，并发现其后续讲义和应用。"
+      },
+      {
+        "query": "site:arxiv.org/pdf/1304.1806 epsilon dlog iterated integrals",
+        "purpose": "定位 C1/C2 的原文公式",
+        "result": "直接核对 v1 的公式 (4)、(6)、(7) 和二圈常系数例。"
+      },
+      {
+        "query": "site:arxiv.org one-loop box \"canonical basis\" differential equations Henn",
+        "purpose": "检验一圈盒图是否仍是差异",
+        "result": "定位 Henn 2014 讲义，并在 v1 正文中核实相同盒图例。"
+      },
+      {
+        "query": "site:arxiv.org before:2013-04-05 Feynman integrals differential equations epsilon factorized canonical form iterated integrals basis",
+        "purpose": "对 C1 做同结果/不同表述的更早前身反向检验",
+        "result": "未发现早于 Henn 2013 且同样明确给出该规范形组合的决定性候选；搜索引擎也返回了超出日期范围的噪声，已人工剔除。"
+      },
+      {
+        "query": "site:arxiv.org before:2013-04-05 \"uniform transcendentality\" basis differential equations Feynman integrals",
+        "purpose": "查找规范基的前置思想",
+        "result": "发现一致超越性与早期微分方程脉络，但不改变 Henn 2013 已直接覆盖拟议方法的结论。"
+      },
+      {
+        "query": "site:arxiv.org before:2013-04-05 massless one-loop box differential equation epsilon expansion polylogarithms",
+        "purpose": "对 C3 做更早工作检验",
+        "result": "发现 Bern、Dixon、Kosower 1992 对维数正规化一圈无质量盒积分的微分方程处理。"
+      },
+      {
+        "query": "site:arxiv.org \"one-loop box integral family\" \"canonical\" epsilon differential equation",
+        "purpose": "尝试证伪一圈盒图与既有例子的差异",
+        "result": "Henn 2014 v1 的正文例与拟议演示在对象、规范形和逐阶解上直接重合。"
+      }
+    ],
+    "gaps": []
+  }
+}

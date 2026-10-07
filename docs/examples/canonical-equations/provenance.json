@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "example_id": "canonical-equations-live-smoke",
+  "example_kind": "public_synthetic_live_smoke_replay",
+  "run_date": "2026-10-08",
+  "model": "gpt-5.6-sol",
+  "reasoning": "high",
+  "verdict": "scooped",
+  "source_records": [
+    {
+      "label": "archived live-demo report-reviewed.json",
+      "sha256": "880e7352d9b1e88ad8428d9f94c43f6931c90571a43c3f56a432f3883583ad08",
+      "use": "reviewed scientific report content; published title adds a synthetic replay label"
+    },
+    {
+      "label": "repository scripts/render_report.py",
+      "sha256": "ab7bc10933057f0e3ed9598531097dc769abd4cdcabefae3afb0d332b992bbfa",
+      "use": "offline HTML rendering"
+    },
+    {
+      "label": "repository assets/report-template.html",
+      "sha256": "785187e39af5528fad668e6ac3e03937084253dc6a9ec4cfd2c338c67ac47dd8",
+      "use": "offline HTML template"
+    }
+  ],
+  "published_artifacts": [
+    {
+      "path": "prompt.txt",
+      "sha256": "9b83cce30478944c1fb1ade1ee692969731356a4e2207e85def0911f235f2227"
+    },
+    {
+      "path": "report.json",
+      "sha256": "f409a1f5ca492af5d1b39b419823e206479a0ce3d4e95546a51abc92380604da"
+    },
+    {
+      "path": "report.html",
+      "sha256": "ab5fc3603897c78ef6ccb4cad1dffe81b5b3ea2310a95fcfc981ddd40bddf730"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a3c59fbe8efe5f4228017d1d969af515a4ae3021d8ddb8e8ed21fd4e1f9482e7"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "sha256": "04059158877ee3f6a182a5975a4df8a3bdbf60a72d96319c5e2cf43908cb6d66"
+    }
+  ],
+  "manifest_note": "provenance.json is not self-hashed because embedding its own digest would be self-referential.",
+  "limits": [
+    "This is a separate synthetic live smoke replay, not a paired no-skill comparison and not held-out evidence.",
+    "No new literature search, scientific run, speed benchmark, or accuracy benchmark was performed for this public package."
+  ]
+}

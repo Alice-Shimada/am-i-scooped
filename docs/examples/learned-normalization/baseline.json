@@ -1,0 +1,30 @@
+{
+  "id": "B11-learned-normalizer-mixture-2016",
+  "status": "complete",
+  "verdict": "risk",
+  "reason": "截止 2016-08-01，Batch Normalization 和 Layer Normalization 都已公开：前者提供 mini-batch 统计，后者提供单样本跨层神经元统计并明确解决 batch-size/RNN 问题，因此主张 (i) 的两个候选归一化器本身已存在。检索未发现截止日前让每个归一化层端到端学习 BN/LN 均值和方差组合权重的方法；与该第二部分直接吻合的 Switchable Normalization 到 2018 年才公开。故已有部分明确、学习混合部分仍具独特性，总体为已有风险。",
+  "decisive_sources": [
+    {
+      "url": "https://arxiv.org/html/1502.03167v1",
+      "locator": "Section 3, lines 112-121; submission date 11 February 2015",
+      "finding": "Batch Normalization computes mean and variance from each training mini-batch."
+    },
+    {
+      "url": "https://arxiv.org/abs/1607.06450v1",
+      "locator": "Abstract and submission history",
+      "finding": "Layer Normalization, submitted 21 July 2016, computes statistics across all neurons in a layer for one training case and is independent of mini-batch size."
+    },
+    {
+      "url": "https://arxiv.org/abs/1806.10779",
+      "locator": "Abstract and submission date",
+      "finding": "The direct learned-mixture construction—end-to-end importance weights over layer/channel/minibatch means and variances—appeared as Switchable Normalization on 28 June 2018, after the cutoff."
+    }
+  ],
+  "queries": [
+    "before:2016-08-02 learned mixture batch normalization layer normalization weights mean variance",
+    "\"batch normalization\" \"layer normalization\" learn weights mixture 2016",
+    "Switchable Normalization learns importance weights batch layer instance normalization arXiv date",
+    "arXiv 1607.06450 layer normalization submitted July 2016 single training case RNN",
+    "before:2016-08-02 normalization method combines batch statistics layer statistics learned weights mean variance"
+  ]
+}
