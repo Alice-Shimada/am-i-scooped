@@ -1,0 +1,4 @@
+interface:
+  display_name: "Am I scooped?"
+  short_description: "联网核查研究是否被抢先，给出明确三级结论、关键证据与可视报告"
+  default_prompt: "用 $am-i-scooped 检索并核对我的研究主张，明确判断目前安全、已有风险还是几乎已被 scoop，展示关键证据并生成 HTML 报告。"
