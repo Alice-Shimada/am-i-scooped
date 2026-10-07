@@ -28,7 +28,8 @@
 
 - [`baseline.json`](baseline.json)：B11 的完整基线条目，保留原始证据记录与检索式。
 - [`report.json`](report.json)：修订后工作流的归档报告；只在标题中增加“历史回放示例”标记。
-- [`report.html`](report.html)：由仓库现有渲染器生成的离线报告。报告保持中文，以忠实保留实际归档输出。
+- [`report.html`](report.html)：保留原始中文离线报告。
+- [英文 HTML 报告](report.en.html)与[英文 JSON](report.en.json)：归档报告的忠实翻译，使用完整英文界面；保留结论、主张与来源映射、日期、URL 和实际检索式。这次翻译没有重新检索。
 - [`provenance.json`](provenance.json)：运行条件，以及归档来源和公开文件的 SHA-256。
 
 这是工作流修订后的单个校准案例示意，不是 held-out 性能证据，也不支持任何统计意义上的准确率或速度结论。它没有超出归档检索及 2016-08-01 截止日去证明穷尽性。

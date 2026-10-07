@@ -48,13 +48,13 @@ Before finalizing, perform one adversarial check: try to find a same-result/diff
 
 ## 4. Give a decisive judgment
 
-Every completed report uses exactly one headline:
+Every completed report uses exactly one headline in its selected language:
 
-| Verdict | Meaning and required evidence |
+| Verdict (English / Chinese) | Meaning and required evidence |
 |---|---|
-| **目前安全** (`safe`) | For novelty, the targeted search and closest-work checks find no substantive threat to the central claims. Explain the distinct result/scope. For public priority, the user's verified public content precedes the matched work; identify both dates. |
-| **已有风险** (`risk`) | An identified public work overlaps a meaningful claim, subsumes a nontrivial part, or specifically announces the central result but leaves a decisive technical condition unresolved. Name the threatened claim and the exact issue. |
-| **几乎已被 scoop** (`scooped`) | Inspected public technical evidence establishes the central result at equivalent or broader scope: public by the assessment date for novelty, or before the verified user milestone for public priority. Only peripheral differences remain. |
+| **Currently safe / 目前安全** (`safe`) | For novelty, the targeted search and closest-work checks find no substantive threat to the central claims. Explain the distinct result/scope. For public priority, the user's verified public content precedes the matched work; identify both dates. |
+| **At risk / 已有风险** (`risk`) | An identified public work overlaps a meaningful claim, subsumes a nontrivial part, or specifically announces the central result but leaves a decisive technical condition unresolved. Name the threatened claim and the exact issue. |
+| **Substantially scooped / 几乎已被 scoop** (`scooped`) | Inspected public technical evidence establishes the central result at equivalent or broader scope: public by the assessment date for novelty, or before the verified user milestone for public priority. Only peripheral differences remain. |
 
 Judge each claim as well as the overall project, using the same basis. Derive the headline from **central** claims: all safe means overall `safe`; all scooped means overall `scooped`; mixed or at-risk central claims mean `risk`. Peripheral overlaps do not inflate or soften the headline. Do not promote standard background methods into the user's novelty claims. Do not average statuses into a risk percentage. Separate result novelty, method novelty, and useful remaining extensions.
 
@@ -69,6 +69,8 @@ Read [references/report-format.md](references/report-format.md), create the stru
 ```bash
 python3 /path/to/am-i-scooped/scripts/render_report.py /absolute/path/report.json --output /absolute/path/report.html
 ```
+
+Choose the report language from the user's explicit preference, otherwise from the conversation: set JSON `language` to `en` for English or `zh-CN` for Simplified Chinese and write all explanatory prose in that language. Both versions include localized verdicts, headings, evidence details, and empty/incomplete states. For another conversation language with no stated report preference, use English for the report. Preserve source titles, exact quotations, and actual search queries in their original form. The renderer does not translate prose. Use `--language en` or `--language zh-CN` only to override the UI selection; if both versions are requested, prepare and render a matching JSON for each.
 
 Resolve the skill path from this file's location. Store each assessment in a new task-owned output directory under the user's workspace, with a descriptive name; honor any supplied destination. Keep research inputs out of the installed skill. The renderer only formats the analysis and has no network or model dependency. A Markdown report is optional, not the sole deliverable. If local execution is unavailable, present the full report in chat and state that the HTML was not generated.
 

@@ -19,7 +19,8 @@ The recommended action was direct: do not present the general strategy or the on
 ## Files and limits
 
 - [`report.json`](report.json) preserves the reviewed archived scientific content; its title marks the public synthetic replay.
-- [`report.html`](report.html) is the offline rendering and remains in Chinese as the actual archived runtime output.
+- [English HTML report](report.en.html) and [English JSON](report.en.json) translate the archived assessment and use the English report interface. Verdicts, claim/source mappings, dates, URLs, version identifiers, and executed queries are preserved. This translation is not a new search run.
+- [`report.html`](report.html) preserves the original Chinese rendering.
 - [`provenance.json`](provenance.json) records the archived source hash, run settings, renderer inputs, and public-file hashes.
 
 This example only shows that the workflow can recover a clear known-prior-work case from a no-reference prompt. It supports no statistical claim about accuracy, speed, or performance on unseen cases.

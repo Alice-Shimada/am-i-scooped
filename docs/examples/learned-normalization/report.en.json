@@ -1,0 +1,114 @@
+{
+  "title": "Historical replay | Learned normalization at the 2016-08-01 cutoff",
+  "assessed_at": "2026-10-08 01:37:05 Asia/Shanghai",
+  "scope": "Public literature through 2016-08-01. The contribution under assessment is an integrated normalization layer that uses both mini-batch statistics and per-sample layer statistics as candidates, learning separate combination weights for their means and variances end to end in each layer to adapt to batch size.",
+  "basis": "novelty",
+  "user_milestone": null,
+  "status": "complete",
+  "verdict": "safe",
+  "summary": "Batch Normalization and Layer Normalization were both public before the cutoff, and Layer Normalization explicitly compared the two and their behavior across batch sizes. The search found no pre-cutoff source that learns weights for combining both sets of means and variances end to end within one layer. The integrated mixing mechanism remains distinct.",
+  "recommendation": "Continue with the learnable statistics-mixing layer as the central contribution, and identify BN and LN as known candidates. Do not claim mini-batch statistics, per-sample layer statistics, or the batch-size problem itself as new.",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "Compute mini-batch and per-sample layer means and variances in every normalization layer, and learn weights for combining the two means and the two variances end to end so that normalization adapts to different batch sizes.",
+      "central": true,
+      "verdict": "safe",
+      "reason": "BN v1 uses only mini-batch statistics; LN v1 uses only within-layer statistics from one sample. Although LN analyzes both in a shared framework and compares batch sizes, it treats them as separate approaches, without jointly computing and learning a mixture of their statistics in one layer. The unified or combined normalization candidates found were first made public after 2016-08-01 and cannot retrospectively cover this claim.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "Normalize layer inputs using the mini-batch mean and variance.",
+      "central": false,
+      "verdict": "scooped",
+      "reason": "Batch Normalization v1 already fully disclosed this candidate set of statistics and its differentiable training procedure.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "Normalize using the mean and variance across all hidden units in one layer of a single training example, removing dependence on batch size.",
+      "central": false,
+      "verdict": "scooped",
+      "reason": "Layer Normalization v1 already fully disclosed this candidate set of statistics and explicitly stated that it works with batch size 1.",
+      "source_ids": [
+        "S2"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+      "url": "https://arxiv.org/html/1502.03167v1",
+      "date": "2015-02-11",
+      "version": "arXiv:1502.03167v1",
+      "evidence_level": "selected_full_text",
+      "locator": "Section 3, Algorithm 1, and Section 3.1: mini-batch mean/variance and the training and inference rules",
+      "finding": "BN v1 normalizes each activation dimension using the current mini-batch mean and variance, and learns a scale and shift after normalization.",
+      "difference": "It does not compute per-sample layer statistics or learn mixing weights between the BN and LN means and variances.",
+      "claim_ids": [
+        "C1",
+        "C2"
+      ],
+      "excerpt": "each mini-batch produces estimates of the mean and variance of each activation"
+    },
+    {
+      "id": "S2",
+      "title": "Layer Normalization",
+      "url": "https://arxiv.org/html/1607.06450v1",
+      "date": "2016-07-21",
+      "version": "arXiv:1607.06450v1",
+      "evidence_level": "selected_full_text",
+      "locator": "Abstract; Section 3, Eq. (3); Section 5.1, Eq. (5) and Table 1; Section 6.6, discussion of Figure 6",
+      "finding": "LN v1 computes the mean and variance across all hidden units of a layer in a single training example. It explicitly removes the restriction on mini-batch size and directly compares BN and LN at batch sizes 128 and 4.",
+      "difference": "The paper chooses LN statistics as an alternative to BN. It does not use both in the same normalization layer or learn weights for combining their means and variances.",
+      "claim_ids": [
+        "C1",
+        "C3"
+      ],
+      "excerpt": "different training cases have different normalization terms"
+    }
+  ],
+  "next_steps": [
+    "Make the parameterization, constraints, and backpropagation of the mean and variance weights the core algorithm. Distinguish them from the scale and shift applied after BN/LN normalization.",
+    "Show how the learned weights change across layers and training conditions at multiple batch sizes, with ablations against standalone BN and LN.",
+    "Credit BN and LN separately as known, noncentral components in related work. Limit the novelty claim to the end-to-end statistics-mixing mechanism."
+  ],
+  "coverage": {
+    "queries": [
+      {
+        "query": "before:2016-08-02 neural network learn weights combine batch normalization layer normalization mean variance",
+        "purpose": "Directly search for a learnable mixture of BN/LN statistics before the cutoff.",
+        "result": "No matching pre-cutoff method was found; the learnable adaptive-mixture candidates returned all postdated the cutoff."
+      },
+      {
+        "query": "before:2016-08-02 \"batch normalization\" \"layer normalization\" mixture",
+        "purpose": "Search for mixtures or combinations using the explicit method names.",
+        "result": "Only BN and LN as separate pre-cutoff approaches were confirmed, without end-to-end mixing weights."
+      },
+      {
+        "query": "before:2016-08-02 adaptive normalization batch size learnable statistics neural network",
+        "purpose": "Look for differently named predecessors through functional descriptions of batch-size adaptation and learnable statistics.",
+        "result": "Alternative normalization methods addressing batch size before the cutoff were found, but no mixture of BN/LN statistics."
+      },
+      {
+        "query": "\"batch and layer normalization\" \"learn\" weights mean variance",
+        "purpose": "Challenge the decisive distinction of learning weights for both sets of statistics.",
+        "result": "No matching source made public before 2016-08-01 was found."
+      },
+      {
+        "query": "https://arxiv.org/abs/1502.03167v1 ; https://arxiv.org/abs/1607.06450v1",
+        "purpose": "Check the earliest specified versions, dates, and technical definitions of the two candidate sets of statistics.",
+        "result": "Confirmed BN v1 on 2015-02-11 and LN v1 on 2016-07-21, both public before the cutoff."
+      }
+    ],
+    "gaps": []
+  },
+  "language": "en"
+}

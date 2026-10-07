@@ -1,0 +1,164 @@
+{
+  "title": "Synthetic live replay | Canonical differential equations and the massless one-loop box",
+  "assessed_at": "2026-10-08 01:07 Asia/Shanghai",
+  "scope": "Live-search demonstration assessing only the three public, illustrative claims in the request. The search covers public theoretical high-energy physics literature from early differential-equation methods through 2026-10-08, focusing on canonical master-integral bases, epsilon expansions as iterated integrals, and the massless one-loop on-shell box family. The requester has no public manuscript. This report assesses current novelty at the assessment date, not the requester's historical public priority. It does not assess a real unpublished project.",
+  "basis": "novelty",
+  "user_milestone": null,
+  "status": "complete",
+  "verdict": "scooped",
+  "summary": "Synthetic live-search example — substantially scooped: Henn's 2013 arXiv v1 already presented the general strategy of choosing a master-integral basis to obtain an epsilon-factorized canonical form and solve it through iterated integrals. The 2014 lecture notes v1 gave the same type of constant-matrix equation and order-by-order integration for the massless one-loop box family.",
+  "recommendation": "Do not publish this general solution strategy or the massless one-loop box demonstration as a new method. Position it as a teaching exposition with prior-work citations, or first add an independently meaningful new algorithm, proof of applicability, treatment beyond polylogarithms, or complete result for a specific new topology.",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "Choose a Feynman master-integral basis so that the dimensionally regulated differential equations take the form d f = epsilon (sum_i A_i d log W_i) f, with constant matrices A_i, and present this as a general solution strategy.",
+      "central": true,
+      "verdict": "scooped",
+      "reason": "Henn 2013 v1 already proposed choosing a preferred master-integral basis to obtain an epsilon-factorized canonical form. Its general equation and two-loop example give d f = epsilon dA f and a system of constant matrices multiplying dlog letters, respectively. The user proposes no additional algorithm, proof, or broader applicability that would establish a material distinction.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "Expand the canonical equations in epsilon and obtain iterated-integral solutions from a path-ordered exponential or order-by-order integration.",
+      "central": true,
+      "verdict": "scooped",
+      "reason": "Henn 2013 v1 already expresses the canonical solution as a path-ordered exponential and explicitly states that the perturbative epsilon solution consists of iterated integrals. The 2014 v1 notes also give the general Chen iterated-integral solution and its order-by-order expansion.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "Use the massless one-loop on-shell box family to demonstrate the basis choice, canonical form, and order-by-order integration in epsilon.",
+      "central": false,
+      "verdict": "scooped",
+      "reason": "The teaching example in Henn 2014 v1 is exactly the massless one-loop 2-to-2 box family: it gives a basis, obtains the constant-matrix system epsilon[a/x+b/(1+x)], and integrates order by order in epsilon. The earlier 1992 work also uses differential equations for the dimensionally regulated massless one-loop box integral.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Multiloop integrals in dimensional regularization made simple",
+      "url": "https://arxiv.org/pdf/1304.1806v1",
+      "date": "2013-04-05",
+      "version": "arXiv:1304.1806v1 (v1 checked directly; current-version content was not backdated to v1)",
+      "evidence_level": "selected_full_text",
+      "locator": "PDF page 2 (one-based), Eqs. (4), (6), (7); PDF page 3, Eqs. (17), (18) and the following discussion of the alphabet and order-by-order solution",
+      "finding": "The paper proposes obtaining epsilon-factorized differential equations through a preferred master-integral basis, writes the path-ordered exponential solution, and states that its epsilon expansion consists of iterated integrals. The massless two-loop 2-to-2 example gives a constant-coefficient system with dlog letters x and 1+x.",
+      "difference": "Its worked example is at two loops rather than the proposed one-loop box, but that distinction does not preserve novelty for the central general method or solution steps.",
+      "claim_ids": [
+        "C1",
+        "C2"
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "Lectures on differential equations for Feynman integrals",
+      "url": "https://arxiv.org/pdf/1412.2296v1",
+      "date": "2014-12-06",
+      "version": "arXiv:1412.2296v1 (v1 checked directly)",
+      "evidence_level": "selected_full_text",
+      "locator": "Printed pages 10–11 (one-based PDF pages 11–12), Eqs. (3.14)–(3.20): massless one-loop 2-to-2 box family; printed page 17 (PDF page 18), Eqs. (5.1)–(5.4): general canonical form and Chen iterated-integral solution",
+      "finding": "The notes choose a three-element basis for the massless one-loop on-shell box family and obtain ∂x g = epsilon[a/x+b/(1+x)]g with constant matrices a and b. They then set g=sum_k epsilon^k g^(k) and integrate order by order. They also express the general multivariable solution as Chen iterated integrals.",
+      "difference": "There is no material difference from the proposed one-loop box demonstration and general solution procedure. This is a teaching exposition of the existing method, not merely a candidate with neighboring terminology.",
+      "claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "Dimensionally Regulated One-Loop Integrals",
+      "url": "https://arxiv.org/pdf/hep-ph/9212308v1",
+      "date": "1992-12-24",
+      "version": "arXiv:hep-ph/9212308v1",
+      "evidence_level": "selected_full_text",
+      "locator": "Title and abstract page (one-based PDF page 1); printed pages 8–9 (PDF pages 9–10), Eqs. (41)–(43) and their application discussion",
+      "finding": "The paper establishes differential relations for one-loop scalar integrals in D=4-2epsilon and explicitly states that the differential equations for box integrals with massless internal lines are easy to solve.",
+      "difference": "It does not provide the later Henn-style canonical basis and constant-matrix dlog form, so it cannot alone cover C1/C2. It establishes that the massless one-loop box was already used as a differential-equation example.",
+      "claim_ids": [
+        "C3"
+      ]
+    }
+  ],
+  "next_steps": [
+    "Stop presenting C1/C2 as a first new method; cite Henn 2013 as direct prior work in any manuscript.",
+    "If the one-loop box material is retained, position it as a teaching example and cite Henn 2014 and earlier differential-equation literature on one-loop integrals.",
+    "Claim methodological innovation only after adding a verifiable technical increment, such as a new canonicalization algorithm with rigorous applicability conditions, a computable extension to non-polylogarithmic function spaces, or a complete integral result for a previously unknown topology. Search again for that precise increment."
+  ],
+  "coverage": {
+    "queries": [
+      {
+        "query": "site:arxiv.org Feynman integrals canonical basis differential equations epsilon dlog constant matrices Henn 2013",
+        "purpose": "Locate direct original literature for C1.",
+        "result": "Found Henn 2013 and later canonical-form algorithms; selected the original Henn paper as decisive evidence."
+      },
+      {
+        "query": "site:arxiv.org \"iterated integrals\" \"canonical form\" master integrals differential equations epsilon",
+        "purpose": "Test the route from canonical form to iterated integrals in C2.",
+        "result": "Found subsequent algorithmic literature on canonical forms and iterated integrals and traced it back to Henn 2013."
+      },
+      {
+        "query": "site:arxiv.org massless one-loop box canonical differential equations epsilon form dlog",
+        "purpose": "Find the same worked example as C3.",
+        "result": "The general search was noisy; the box family was subsequently located in the body of Henn's lecture notes."
+      },
+      {
+        "query": "site:arxiv.org Kotikov differential equations method Feynman integrals one-loop box dimensional regularization",
+        "purpose": "Trace early predecessors of the differential-equation method.",
+        "result": "Found Kotikov's methodological reviews and leads to early differential-equation work."
+      },
+      {
+        "query": "arXiv 1304.1806 Multiloop integrals in dimensional regularization made simple Henn canonical differential equations",
+        "purpose": "Check the strongest candidate's title, abstract, and public date.",
+        "result": "Located arXiv:1304.1806 and then directly read the v1 PDF."
+      },
+      {
+        "query": "\"Multiloop integrals in dimensional regularization made simple\" canonical form d log",
+        "purpose": "Test C1 using alternative phrasing.",
+        "result": "Located Henn 2013 again and found the subsequent lecture notes and applications."
+      },
+      {
+        "query": "site:arxiv.org/pdf/1304.1806 epsilon dlog iterated integrals",
+        "purpose": "Locate the original equations for C1/C2.",
+        "result": "Directly checked v1 Eqs. (4), (6), (7) and the two-loop constant-coefficient example."
+      },
+      {
+        "query": "site:arxiv.org one-loop box \"canonical basis\" differential equations Henn",
+        "purpose": "Test whether the one-loop box remains a distinction.",
+        "result": "Located Henn 2014 and verified the same box example in the v1 text."
+      },
+      {
+        "query": "site:arxiv.org before:2013-04-05 Feynman integrals differential equations epsilon factorized canonical form iterated integrals basis",
+        "purpose": "Counter-search for earlier predecessors achieving the same result under different descriptions of C1.",
+        "result": "No decisive candidate before Henn 2013 was found that explicitly gave the same canonical-form combination. Search results also included out-of-range noise, which was manually excluded."
+      },
+      {
+        "query": "site:arxiv.org before:2013-04-05 \"uniform transcendentality\" basis differential equations Feynman integrals",
+        "purpose": "Search for ideas preceding the canonical basis.",
+        "result": "Found uniform-transcendentality and early differential-equation threads, without changing the conclusion that Henn 2013 directly covers the proposed method."
+      },
+      {
+        "query": "site:arxiv.org before:2013-04-05 massless one-loop box differential equation epsilon expansion polylogarithms",
+        "purpose": "Check earlier work for C3.",
+        "result": "Found Bern, Dixon, and Kosower 1992 treating the dimensionally regulated massless one-loop box through differential equations."
+      },
+      {
+        "query": "site:arxiv.org \"one-loop box integral family\" \"canonical\" epsilon differential equation",
+        "purpose": "Try to falsify the distinction between the proposed one-loop box and existing examples.",
+        "result": "The worked example in Henn 2014 v1 directly overlaps the proposed demonstration in its object, canonical form, and order-by-order solution."
+      }
+    ],
+    "gaps": []
+  },
+  "language": "en"
+}

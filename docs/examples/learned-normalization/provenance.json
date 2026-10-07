@@ -35,12 +35,12 @@
     {
       "label": "repository scripts/render_report.py",
       "sha256": "ab7bc10933057f0e3ed9598531097dc769abd4cdcabefae3afb0d332b992bbfa",
-      "use": "offline HTML rendering"
+      "use": "original Chinese HTML rendering; historical renderer hash preserved"
     },
     {
       "label": "repository assets/report-template.html",
       "sha256": "785187e39af5528fad668e6ac3e03937084253dc6a9ec4cfd2c338c67ac47dd8",
-      "use": "offline HTML template"
+      "use": "original Chinese HTML template; historical template hash preserved"
     }
   ],
   "published_artifacts": [
@@ -62,16 +62,46 @@
     },
     {
       "path": "README.md",
-      "sha256": "4842100f8b9db7f1b3a40a365ae90de470a43e69568923e2cbcdb46a76c2d67a"
+      "sha256": "a68a31cb1f5f321077e48d4a304f33c019fecccebe75b48abd56ee9da31b0633"
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "ac25f9a89d6f9f04904ff8f4cb70855d73c6f2707d7e8563661a0786373f4fcf"
+      "sha256": "b029ee1d46b151a33ac1be7a0c2d4a9f9531d6663faaf9f122abc8d3fcd43da5"
+    },
+    {
+      "path": "report.en.json",
+      "sha256": "68d2440d863842986a3083ef500dacb1044eaa8e1ec3cab4dd62a88a32213dd7"
+    },
+    {
+      "path": "report.en.html",
+      "sha256": "78281555e17af9d5d6589c53c1bc8b8edeb0efe04f2e340ea9fd701b82ac4051"
     }
   ],
   "manifest_note": "provenance.json is not self-hashed because embedding its own digest would be self-referential.",
   "limits": [
     "This is one calibration-case illustration after workflow revisions, not held-out performance evidence.",
     "No new literature search, scientific run, speed benchmark, or accuracy benchmark was performed for this public package."
+  ],
+  "translations": [
+    {
+      "language": "en",
+      "source": "report.json",
+      "source_sha256": "e29bc10e6cdd7c94a8eea035c1b98ad3e50eb50596e80aa170c20faa4a7ee5cb",
+      "data": "report.en.json",
+      "html": "report.en.html",
+      "prepared_at": "2026-10-08",
+      "method": "Model-authored English translation of the archived Chinese assessment. No new literature search or scientific evaluation.",
+      "preserved": "Judgments, claim/source IDs and mappings, dates, URLs, version identifiers, exact quotations, and executed query strings. Explanatory prose is translated.",
+      "render_inputs": [
+        {
+          "path": "scripts/render_report.py",
+          "sha256": "164721dce5ffe270944ba0c788a1f3b7295af241f6a9301af50b9a61b48a64ff"
+        },
+        {
+          "path": "assets/report-template.html",
+          "sha256": "cc58311b980b5b677d642c6ba603327b14e2e55995859e98d241c0c7f872c325"
+        }
+      ]
+    }
   ]
 }

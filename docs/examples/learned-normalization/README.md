@@ -30,7 +30,8 @@ The verdict changed because the revised workflow preserves the relation between 
 
 - [`baseline.json`](baseline.json) is the complete B11 baseline entry, including its original evidence records and queries.
 - [`report.json`](report.json) is the archived revised-workflow report, with only the title labeled as a historical replay.
-- [`report.html`](report.html) is the offline rendering of that report. The report remains in Chinese because it preserves the archived runtime output.
+- [English HTML report](report.en.html) and [English JSON](report.en.json) translate the archived assessment and use the English report interface. The verdicts, claim/source mappings, dates, URLs, exact quotations, and executed queries are preserved. This translation is not a new search run.
+- [`report.html`](report.html) preserves the original Chinese rendering.
 - [`provenance.json`](provenance.json) records run settings and SHA-256 hashes for the archived sources and published files.
 
 This is a calibration-case illustration produced after workflow revisions. It is not held-out performance evidence and supports no statistical claim about accuracy or speed. The replay does not establish exhaustive coverage beyond the archived search and 2016-08-01 cutoff.

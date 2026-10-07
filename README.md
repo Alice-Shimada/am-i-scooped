@@ -44,10 +44,10 @@ The agent found and checked the relevant papers itself:
 This is a replay of a past research question. It is not a claim that this idea is new today.
 
 <p align="center">
-  <a href="docs/examples/learned-normalization/README.md"><img src="docs/assets/report-preview.png" alt="Actual saved Chinese HTML report: safe through 2016-08-01, with the combined mechanism kept as the central claim." width="100%"></a>
+  <a href="docs/examples/learned-normalization/README.md"><img src="docs/assets/report-preview.en.png" alt="English HTML report: safe through 2016-08-01, with the combined mechanism kept as the central claim." width="100%"></a>
 </p>
 
-*Actual report from the Chinese-language run. [Read the English walkthrough](docs/examples/learned-normalization/README.md) · [Inspect report data](docs/examples/learned-normalization/report.json) · [Get the HTML file](docs/examples/learned-normalization/report.html).*
+*English translation of the saved Chinese-language assessment, rendered with the English interface. [Read the walkthrough](docs/examples/learned-normalization/README.md) · [Inspect English report data](docs/examples/learned-normalization/report.en.json) · [Get the English HTML](docs/examples/learned-normalization/report.en.html) · [Original Chinese report](docs/examples/learned-normalization/report.html).*
 
 There is also a **no-reference physics example**: the user proposes an ε-factorized differential-equation method for Feynman integrals. The agent independently finds Henn's 2013 method and 2014 worked example, maps them to the claimed contributions, and returns **substantially scooped**. [See the prompt, sources, and report](docs/examples/canonical-equations/README.md).
 
@@ -62,7 +62,7 @@ The same normalization prompt was given to the same model, **`gpt-5.6-sol` with 
 | Pre-cutoff predecessors used for the verdict | Batch Normalization and Layer Normalization. | The same relevant predecessors. |
 | Deciding argument | Existing components count as partial overlap, even though the learned mixture remains distinct. | The central claim is the learned mixture. Separate predecessors do not establish that mechanism. |
 | Verdict at the cutoff | **At risk** | **Safe** |
-| Evidence to inspect | [Saved baseline output and queries](docs/examples/learned-normalization/baseline.json) | [Claim mapping, source passages, and search log](docs/examples/learned-normalization/report.json) |
+| Evidence to inspect | [Saved baseline output and queries](docs/examples/learned-normalization/baseline.json) | [Claim mapping, source passages, and search log](docs/examples/learned-normalization/report.en.json) |
 
 **This example was used during calibration, then rerun after the workflow was revised.** It shows a concrete change in claim interpretation, not an unseen accuracy benchmark or a measured speedup. The [case record](docs/examples/learned-normalization/README.md) includes the original prompt, both outputs, and provenance.
 
@@ -76,7 +76,7 @@ The same normalization prompt was given to the same model, **`gpt-5.6-sol` with 
 
 If a missing decisive source prevents a supported judgment, the report names that failure and stays unfinished. A failed search never becomes a green verdict.
 
-You get the key findings in chat and a standalone HTML report with claim comparisons, source links, dates, inspected passages, and the actual search log.
+You get the key findings in chat and a standalone HTML report with claim comparisons, source links, dates, inspected passages, and the actual search log. **English and Simplified Chinese reports are built in.** The model follows your language preference and prepares both the interface and report prose in that language.
 
 ## Quickstart
 
@@ -113,10 +113,11 @@ Accuracy comes first. Straightforward retrieval tasks may use lower subagent rea
 | [report-template.html](assets/report-template.html) | Responsive report layout. |
 
 ```bash
-python3 scripts/render_report.py report.json --output report.html
+python3 scripts/render_report.py report.en.json --language en --output report.en.html
+python3 scripts/render_report.py report.zh-CN.json --language zh-CN --output report.zh-CN.html
 ```
 
-Choose a new output filename for a revised report. The renderer formats judgments and checks their consistency; the model performs the research.
+Set JSON `language` to `en` or `zh-CN`; the CLI flag can override it. Prepare the report prose in the matching language—the renderer translates interface labels only. Older JSON files without a language retain the Chinese interface. Choose a new output filename for a revised report. The renderer formats judgments and checks their consistency; the model performs the research.
 
 </details>
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="$language">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,18 +28,18 @@
 </head>
 <body>
   <main class="page">
-    <header class="masthead"><span class="brand">AM I SCOOPED?</span><span class="edition">文献优先权 · 贡献重叠评估</span></header>
+    <header class="masthead"><span class="brand">AM I SCOOPED?</span><span class="edition">$edition</span></header>
     <h1>$title</h1>
-    <div class="hero $state" aria-label="评估结论">
+    <div class="hero $state" aria-label="$assessment_label">
       <div class="hero-top"><p class="eyebrow">$status_label</p><p class="outcome">$outcome</p><p class="decisive">$summary</p></div>
-      <div class="action"><span class="action-label">现在做什么</span><p>$recommendation</p></div>
+      <div class="action"><span class="action-label">$action_label</span><p>$recommendation</p></div>
     </div>
-    <div class="scope"><dl><dt>评估口径</dt><dd>$basis</dd><dt>评估时间</dt><dd>$assessed_at</dd></dl><dl><dt>本次检索与判断范围</dt><dd>$scope</dd></dl>$milestone</div>
-    <section aria-labelledby="claims-title"><div class="section-title"><h2 id="claims-title">逐项贡献判断</h2><span class="section-note">核心主张已单独标记</span></div>$claims</section>
-    <section aria-labelledby="sources-title"><div class="section-title"><h2 id="sources-title">决定性来源与发现</h2><span class="section-note">$source_count 条已登记来源</span></div><div class="source-grid">$sources</div></section>
-    <div class="bottom-grid$bottom_class"><section class="note-panel" aria-labelledby="next-title"><h2 id="next-title">下一步</h2>$next_steps</section>$gaps_panel</div>
-    <details class="search-log"><summary>检索记录 · $query_count 条检索式</summary><div class="detail-body">$queries</div></details>
-    <footer><p>文献优先权 · 贡献重叠评估</p></footer>
+    <div class="scope"><dl><dt>$basis_label</dt><dd>$basis</dd><dt>$assessed_at_label</dt><dd>$assessed_at</dd></dl><dl><dt>$scope_label</dt><dd>$scope</dd></dl>$milestone</div>
+    <section aria-labelledby="claims-title"><div class="section-title"><h2 id="claims-title">$claims_heading</h2><span class="section-note">$claims_note</span></div>$claims</section>
+    <section aria-labelledby="sources-title"><div class="section-title"><h2 id="sources-title">$sources_heading</h2><span class="section-note">$source_count_label</span></div><div class="source-grid">$sources</div></section>
+    <div class="bottom-grid$bottom_class"><section class="note-panel" aria-labelledby="next-title"><h2 id="next-title">$next_heading</h2>$next_steps</section>$gaps_panel</div>
+    <details class="search-log"><summary>$query_count_label</summary><div class="detail-body">$queries</div></details>
+    <footer><p>$edition</p></footer>
   </main>
 </body>
 </html>

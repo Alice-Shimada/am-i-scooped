@@ -111,8 +111,11 @@ git clone https://github.com/Alice-Shimada/am-i-scooped.git "$skills_root/am-i-s
 | [report-template.html](assets/report-template.html) | 自适应报告模板。 |
 
 ```bash
-python3 scripts/render_report.py report.json --output report.html
+python3 scripts/render_report.py report.zh-CN.json --language zh-CN --output report.zh-CN.html
+python3 scripts/render_report.py report.en.json --language en --output report.en.html
 ```
+
+**报告内置简体中文和英文两种界面。** 模型按用户明确偏好或对话语言选择，在 JSON 中设置 `language: "zh-CN"` 或 `"en"`，并用对应语言撰写正文。`--language` 可覆盖界面选择，但不会自动翻译正文；旧 JSON 未指定语言时保留中文界面。
 
 修订报告时使用新的输出文件名。生成器负责格式化与一致性检查，研究判断由模型完成。
 

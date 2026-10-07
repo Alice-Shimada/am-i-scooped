@@ -16,6 +16,7 @@
 
 - [`report.json`](report.json)：保留 reviewed 归档报告的科学内容；标题标明公开合成回放。
 - [`report.html`](report.html)：离线渲染报告，保持实际归档运行的中文输出。
+- [英文 HTML 报告](report.en.html)与[英文 JSON](report.en.json)：归档报告的忠实翻译，使用完整英文界面；保留结论、主张与来源映射、日期、URL 和实际检索式。这次翻译没有重新检索。
 - [`provenance.json`](provenance.json)：记录归档来源哈希、运行条件、渲染器输入与公开文件哈希。
 
 这个示例只表明工作流能从无论文线索的输入中识别一个明确的已知先行工作案例，不支持任何统计意义上的准确率、速度或未见案例性能结论。
